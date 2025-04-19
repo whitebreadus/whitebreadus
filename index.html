@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://cdn.discordapp.com/emojis/1046551019888328744.webp" type="image/webp">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="https://static.wallpaperwaifu.com/videos/preview/2022/silhouette-of-samurai-walking-full-moon-preview.webm" type="video/webm">
+    </video>
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="links-container">
+        <div class="profile">
+            <a href="https://e-z.bio/whitebread.cc" target="_blank" class="avatar-container">
+                <img class="avatar" src="https://i.imgur.com/lZrdT03.jpeg" alt="Profile Image" loading="lazy">
+            </a>
+            <h1 class="title">whitebread.cc</h1>
+        </div>
+
+        <div class="link-list">
+            <!-- Раздел Windows -->
+            <div class="link-item">
+                <a href="#" class="link windows-link" id="windows-link">
+                    <i class="fab fa-windows link-icon"></i>
+                    <span class="link-text">Windows</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="windows-container submenu-container" id="windows-container">
+                    <div class="windows-content submenu-content">
+                        <!-- Системные компоненты -->
+                        <div class="category-title windows-category">
+                            <i class="fas fa-microchip"></i> Системные компоненты
+                        </div>
+                        <div class="category-divider windows-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-file-download link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">Visual C++ Redist (x64)</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://aka.ms/vs/17/release/vc_redist.x86.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-file-download link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">Visual C++ Redist (x86)</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://download.microsoft.com/download/1/7/1/1718ccc4-6315-4d8e-9543-8e28a4e18c4c/dxwebsetup.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-gamepad link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">DirectX Installer</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://sdi-tool.org/" target="_blank" class="link sub-link">
+                                <i class="fas fa-download link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">Snappy Driver Installer</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Утилиты -->
+                        <div class="category-title windows-category">
+                            <i class="fas fa-tools"></i> Утилиты
+                        </div>
+                        <div class="category-divider windows-divider"></div>
+
+                        <div class="link-item">
+                            <a href="https://www.revi.cc/revios/download/" target="_blank" class="link sub-link">
+                                <i class="fas fa-download link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">ReviOS</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1pK3vSjDY0ck4f6ESQ_ocp-r9vocb1Bxa&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-cog link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">AutoSettingsPS</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-shield-alt link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">O&O ShutUp10++</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://wpd.app/get/latest.zip" target="_blank" class="link sub-link">
+                                <i class="fas fa-lock link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">WPD</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://github.com/BlendLog/MinerSearch" target="_blank" class="link sub-link">
+                                <i class="fas fa-search link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">MinerSearch</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://download-2.msi.com/uti_exe/vga/MSIAfterburnerSetup.zip?__token__=exp=1745243151~acl=/*~hmac=2e503b460402027437af7272eeae1f98800ccce88b82c11ad2be3b608b923cdb" target="_blank" class="link sub-link">
+                                <i class="fas fa-tachometer-alt link-icon" style="color: var(--windows-color);"></i>
+                                <span class="link-text">MSI Afterburner</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="link-item">
+                <a href="#" class="link tools-link" id="tools-link">
+                    <i class="fas fa-tools link-icon"></i>
+                    <span class="link-text">Инструменты</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="tools-container submenu-container" id="tools-container">
+                    <div class="tools-content submenu-content">
+                        <!-- Системные утилиты -->
+                        <div class="category-title tools-category">
+                            <i class="fas fa-wrench"></i> Системные утилиты
+                        </div>
+                        <div class="category-divider tools-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://geekuninstaller.com/geek.zip" target="_blank" class="link sub-link">
+                                <i class="fas fa-trash-alt link-icon" style="color: var(--tools-color);"></i>
+                                <span class="link-text">Geek Uninstaller</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://memreduct.org/files/memreduct-3.5.2-setup.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-memory link-icon" style="color: var(--tools-color);"></i>
+                                <span class="link-text">Mem Reduct</span>
+                            </a>
+                        </div>
+
+                        <!-- Игровые инструменты -->
+                        <div class="category-title tools-category">
+                            <i class="fas fa-gamepad"></i> Игровые утилиты
+                        </div>
+                        <div class="category-divider tools-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://du0wcodktyky8.cloudfront.net/installer/60487026146205915/09570835" target="_blank" class="link sub-link">
+                                <i class="fas fa-bolt link-icon" style="color: var(--tools-color);"></i>
+                                <span class="link-text">Cheat Engine</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="link-item">
+                <a href="#" class="link files-tools-link" id="files-tools-link">
+                    <i class="fas fa-folder-open link-icon"></i>
+                    <span class="link-text">Файловые инструменты</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="files-tools-container submenu-container" id="files-tools-container">
+                    <div class="files-tools-content submenu-content">
+                        <!-- Архивация -->
+                        <div class="category-title files-tools-category">
+                            <i class="fas fa-file-archive"></i> Архивация
+                        </div>
+                        <div class="category-divider files-tools-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://objects.githubusercontent.com/github-production-release-asset-2e65be/466446150/1645817e-3677-4207-93ff-e62de7e147be?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T182455Z&X-Amz-Expires=300&X-Amz-Signature=4ca3145b994cf4f7c0cd512ce39ddd193d7ecc3ed73341e4121b46fe0fbbde19&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D7z2409-x64.exe&response-content-type=application%2Foctet-stream" target="_blank" class="link sub-link">
+                                <i class="fas fa-box-open link-icon" style="color: var(--files-tools-color);"></i>
+                                <span class="link-text">7zip</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://www.voidtools.com/Everything-1.4.1.1026.x86-Setup.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-search-plus link-icon" style="color: var(--files-tools-color);"></i>
+                                <span class="link-text">Everything</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://objects.githubusercontent.com/github-production-release-asset-2e65be/13428264/04bf7d18-840e-4154-96dc-30b7686530dd?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T182538Z&X-Amz-Expires=300&X-Amz-Signature=bb58a42e5c9bb5824376a65f5c8df2e2a238702bd1a04905d15ea8084e0b0c4d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DShareX-17.0.0-setup.exe&response-content-type=application%2Foctet-stream" target="_blank" class="link sub-link">
+                                <i class="fas fa-video link-icon" style="color: var(--files-tools-color);"></i>
+                                <span class="link-text">ShareX</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://vscode.download.prss.microsoft.com/dbazure/download/stable/17baf841131aa23349f217ca7c570c76ee87b957/VSCodeUserSetup-x64-1.99.3.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-file-code link-icon" style="color: var(--files-tools-color);"></i>
+                                <span class="link-text">Visual Studio Code</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://github.com/valinet/ExplorerPatcher" target="_blank" class="link sub-link">
+                                <i class="fas fa-folder-open link-icon" style="color: var(--files-tools-color);"></i>
+                                <span class="link-text">Explorer Patcher</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Раздел Браузер -->
+            <div class="link-item">
+                <a href="#" class="link browser-link" id="browser-link">
+                    <i class="fas fa-globe link-icon"></i>
+                    <span class="link-text">Браузер</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="browser-container submenu-container" id="browser-container">
+                    <div class="browser-content submenu-content">
+                        <!-- Firefox -->
+                        <div class="category-title browser-category">
+                            <i class="fab fa-firefox"></i> Firefox
+                        </div>
+                        <div class="category-divider browser-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://download-installer.cdn.mozilla.net/pub/firefox/releases/137.0.2/win32/ru/Firefox%20Installer.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-download link-icon" style="color: var(--browser-color);"></i>
+                                <span class="link-text">Браузер</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://addons.mozilla.org/ru/firefox/addon/perfectdarktheme/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank" class="link sub-link">
+                                <i class="fas fa-moon link-icon" style="color: var(--browser-color);"></i>
+                                <span class="link-text">Темная тема</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1VNzEjjrxdIQ27jf1lQj1uCSrcDBYvU8O&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-paint-brush link-icon" style="color: var(--browser-color);"></i>
+                                <span class="link-text">Firefox Plus тема</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Другие инструменты -->
+                        <div class="category-title browser-category">
+                            <i class="fas fa-language"></i> Перевод
+                        </div>
+                        <div class="category-divider browser-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://github.com/ilyhalight/voice-over-translation" target="_blank" class="link sub-link">
+                                <i class="fas fa-exchange-alt link-icon" style="color: var(--browser-color);"></i>
+                                <span class="link-text">Яндекс Переводчик</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел Игры и лаунчеры -->
+            <div class="link-item">
+                <a href="#" class="link games-link" id="games-link">
+                    <i class="fas fa-gamepad link-icon"></i>
+                    <span class="link-text">Лаунчеры и моды</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="games-container submenu-container" id="games-container">
+                    <div class="games-content submenu-content">
+                        <!-- Группа лаунчеров -->
+                        <div class="category-title launcher-category">
+                            <i class="fas fa-download"></i> Игровые лаунчеры
+                        </div>
+                        <div class="category-divider launcher-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" target="_blank" class="link sub-link">
+                                <i class="fab fa-steam link-icon" style="color: var(--steam-color);"></i>
+                                <span class="link-text">Steam</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://epicgames-download1.akamaized.net/Builds/UnrealEngineLauncher/Installers/Win32/EpicInstaller-18.5.0.msi?launcherfilename=EpicInstaller-18.5.0-a21d84f4e44240429af5339847918fbd.msi" target="_blank" class="link sub-link">
+                                <i class="fas fa-gamepad link-icon" style="color: var(--epic-color);"></i>
+                                <span class="link-text">Epic Games</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://objects.githubusercontent.com/github-production-release-asset-2e65be/254852798/bc8f613c-1700-4987-95a2-a5b9c8a4f01c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T182810Z&X-Amz-Expires=300&X-Amz-Signature=073e84db127638d36aefc4a43f6d76a9bd9ccea4a2eb82a17f272591f6895d39&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DSideQuest-Setup-0.10.42-x64-win.exe&response-content-type=application%2Foctet-stream" target="_blank" class="link sub-link">
+                                <i class="fas fa-vr-cardboard link-icon" style="color: #8A2BE2;"></i>
+                                <span class="link-text">SideQuest (VR)</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://launcher.mojang.com/download/MinecraftInstaller.exe?ref=mcnet" target="_blank" class="link sub-link">
+                                <i class="fas fa-cube link-icon" style="color: var(--minecraft-color);"></i>
+                                <span class="link-text">Minecraft Launcher</span>
+                            </a>
+                        </div>
+
+                        <!-- Steam Tools -->
+                        <div class="category-title steam-category">
+                            <i class="fab fa-steam"></i> Steam Tools
+                        </div>
+                        <div class="category-divider steam-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://steambrew.app/" target="_blank" class="link sub-link">
+                                <i class="fas fa-paint-brush link-icon" style="color: var(--steam-color);"></i>
+                                <span class="link-text">Millennium</span>
+                            </a>
+                        </div>
+
+                        <!-- Minecraft -->
+                        <div class="category-title minecraft-category">
+                            <i class="fas fa-cube"></i> Minecraft
+                        </div>
+                        <div class="category-divider minecraft-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/download?id=1qR3CRoT4HDQ91La0ZtuNWaJGAiw7meVB&export=download&confirm=t&uuid=887be527-f067-42c8-96a3-7cf979b0f2db&at=APcmpoxz54-k6oTd4yNAXGe_mJOW%3A1745085980132" target="_blank" class="link sub-link">
+                                <i class="fas fa-leaf link-icon" style="color: var(--minecraft-color);"></i>
+                                <span class="link-text">Better Vanilla</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Garry's Mod -->
+                        <div class="category-title gmod-category">
+                            <i class="fas fa-rocket"></i> Garry's Mod
+                        </div>
+                        <div class="category-divider gmod-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1b-EYUy7I2uTJChhEMeRFY7vrd9_ArOJe&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-bars link-icon" style="color: var(--gmod-color);"></i>
+                                <span class="link-text">Меню</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1b-EYUy7I2uTJChhEMeRFY7vrd9_ArOJe&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-sliders-h link-icon" style="color: var(--gmod-color);"></i>
+                                <span class="link-text">Конфиг</span>
+                            </a>
+                        </div>
+                        
+                        <div class="link-item">
+                            <a href="https://gmodcontent.com/" target="_blank" class="link sub-link">
+                                <i class="fas fa-download link-icon" style="color: var(--gmod-color);"></i>
+                                <span class="link-text">Контент</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <!-- Раздел Коммуникации -->
+            <div class="link-item">
+                <a href="#" class="link communications-link" id="communications-link">
+                    <i class="fas fa-comments link-icon"></i>
+                    <span class="link-text">Коммуникации</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="communications-container submenu-container" id="communications-container">
+                    <div class="communications-content submenu-content">
+                        <!-- Мессенджеры -->
+                        <div class="category-title steam-category">
+                            <i class="fas fa-comment-dots"></i> Мессенджеры
+                        </div>
+                        <div class="category-divider steam-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://stable.dl2.discordapp.net/distro/app/stable/win/x64/1.0.9188/DiscordSetup.exe" target="_blank" class="link sub-link">
+                                <i class="fab fa-discord link-icon" style="color: #5865F2;"></i>
+                                <span class="link-text">Discord</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://td.telegram.org/tx64/tsetup-x64.5.13.1.exe" target="_blank" class="link sub-link">
+                                <i class="fab fa-telegram link-icon" style="color: #0088cc;"></i>
+                                <span class="link-text">Telegram</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Discord моды -->
+                        <div class="category-title steam-category">
+                            <i class="fab fa-discord"></i> Discord моды
+                        </div>
+                        <div class="category-divider steam-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://objects.githubusercontent.com/github-production-release-asset-2e65be/556771238/e6f209d5-f5ac-4b74-8139-eeaefa7dfa73?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250419%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250419T183048Z&X-Amz-Expires=300&X-Amz-Signature=c1d1bc67f3ec63e80beca97d2beb86ebdd438548c5d70c183da3efde0477f78c&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DVencordInstaller.exe&response-content-type=application%2Foctet-stream" target="_blank" class="link sub-link">
+                                <i class="fas fa-code link-icon" style="color: #5865F2;"></i>
+                                <span class="link-text">Vencord</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1F5eDm4jzeqQwH0ezdH5SR62831OAOmuq&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-paint-brush link-icon" style="color: #5865F2;"></i>
+                                <span class="link-text">Discord Themes</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://github.com/victornpb/undiscord" target="_blank" class="link sub-link">
+                                <i class="fas fa-trash-alt link-icon" style="color: #5865F2;"></i>
+                                <span class="link-text">Undiscord</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел Сеть и VPN -->
+            <div class="link-item">
+                <a href="#" class="link network-link" id="network-link">
+                    <i class="fas fa-network-wired link-icon"></i>
+                    <span class="link-text">Сеть и VPN</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="network-container submenu-container" id="network-container">
+                    <div class="network-content submenu-content">
+                        <!-- VPN -->
+                        <div class="category-title launcher-category">
+                            <i class="fas fa-shield-alt"></i> VPN
+                        </div>
+                        <div class="category-divider launcher-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://download.radmin-vpn.com/download/files/Radmin_VPN_1.4.4642.1.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-network-wired link-icon" style="color: #4687ff;"></i>
+                                <span class="link-text">Radmin VPN</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://downloads77-windows.nordcdn.com/apps/windows/NordVPN/latest/NordInstaller.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-lock link-icon" style="color: #4687ff;"></i>
+                                <span class="link-text">NordVPN</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Торренты -->
+                        <div class="category-title launcher-category">
+                            <i class="fas fa-download"></i> Торренты
+                        </div>
+                        <div class="category-divider launcher-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://download.fosshub.com/Protected/expiretime=1745137642;badurl=aHR0cHM6Ly93d3cuZm9zc2h1Yi5jb20vcUJpdHRvcnJlbnQuaHRtbA==/26f78265cced314b605209f24282f96fa91df2088e9b895fe27d72a6503993ae/5b8793a7f9ee5a5c3e97a3b2/67fc21c230835604261a8af3/qbittorrent_5.0.5_x64_setup.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-download link-icon" style="color: #4687ff;"></i>
+                                <span class="link-text">QBittorrent</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел Музыка и медиа -->
+            <div class="link-item">
+                <a href="#" class="link media-link" id="media-link">
+                    <i class="fas fa-music link-icon"></i>
+                    <span class="link-text">Музыка и медиа</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="media-container submenu-container" id="media-container">
+                    <div class="media-content submenu-content">
+                        <!-- Музыка -->
+                        <div class="category-title minecraft-category">
+                            <i class="fas fa-music"></i> Музыка
+                        </div>
+                        <div class="category-divider minecraft-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://github.com/SpotX-CLI/SpotX-Win" target="_blank" class="link sub-link">
+                                <i class="fab fa-spotify link-icon" style="color: #1DB954;"></i>
+                                <span class="link-text">SpotX</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Видео и фото -->
+                        <div class="category-title media-category">
+                            <i class="fas fa-photo-video"></i> Видео и фото
+                        </div>
+                        <div class="category-divider media-divider"></div>
+
+                        <div class="link-item">
+                            <a href="https://36n3c2.soft-load.eu/b4/8/9/a0a90fa6fabe704c8664dcce9148265a/picasa39-setup.exe" target="_blank" class="link sub-link">
+                                <i class="fas fa-camera link-icon" style="color: var(--media-color);"></i>
+                                <span class="link-text">Google Picasa 3</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://1progs.ru.net/adobe-photoshop-2022/" target="_blank" class="link sub-link">
+                                <i class="fas fa-image link-icon" style="color: var(--media-color);"></i>
+                                <span class="link-text">Photoshop</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://www.capcut.com/" target="_blank" class="link sub-link">
+                                <i class="fas fa-video link-icon" style="color: var(--media-color);"></i>
+                                <span class="link-text">CapCut</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://netcologne.dl.sourceforge.net/project/mpv-player-windows/release/mpv-0.39.0-x86_64.7z?viasf=1" target="_blank" class="link sub-link">
+                                <i class="fas fa-film link-icon" style="color: var(--media-color);"></i>
+                                <span class="link-text">MPV</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Раздел Оформление -->
+            <div class="link-item">
+                <a href="#" class="link customization-link" id="customization-link">
+                    <i class="fas fa-palette link-icon"></i>
+                    <span class="link-text">Кастомизация Windows</span>
+                    <i class="fas fa-chevron-down toggle-arrow"></i>
+                </a>
+                <div class="customization-container submenu-container" id="customization-container">
+                    <div class="customization-content submenu-content">
+                        <div class="category-divider customization-divider"></div>
+                        
+                        <div class="category-title theme-category">
+                            <i class="fas fa-palette"></i> Оформление
+                        </div>
+                        <div class="category-divider theme-divider"></div>
+                        
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/u/0/uc?id=1yxRBmHvgxpqBk3S06MjUSWaY5ESDDVse&export=download" target="_blank" class="link sub-link">
+                                <i class="fas fa-palette link-icon" style="color: var(--theme-color);"></i>
+                                <span class="link-text">Зелёная тема</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://drive.google.com/file/d/1pFF7hFfBudCTJWHlqXLwGtUW2ebMJ4X9/view?usp=drive_link" target="_blank" class="link sub-link">
+                                <i class="fas fa-mouse-pointer link-icon" style="color: var(--theme-color);"></i>
+                                <span class="link-text">Курсоры</span>
+                            </a>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://drive.usercontent.google.com/download?id=1Aq9jtx9daTQQqXPNEzYVnXXr60hPqmQ0&export=download&authuser=0&confirm=t&uuid=1165aa3b-7fcd-46ca-b79a-9ad0496b0975&at=APcmpowAjU1tVC7363HRymTkSTzM%3A1745086258880" target="_blank" class="link sub-link">
+                                <i class="fas fa-highlighter link-icon" style="color: var(--theme-color);"></i>
+                                <span class="link-text">Цвет выделения</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
